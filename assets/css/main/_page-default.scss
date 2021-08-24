@@ -1,0 +1,44 @@
+.main.page-default {
+  margin-top: 176px;
+  padding: 0 0 100px;
+  @include breakpoint(1024) {
+    margin-top: 150px;
+  }
+  @include breakpoint(768) {
+    padding: 0 0 75px;
+  }
+  .wrapper {
+    h1 {
+      @include font(70px, $black, 400, 1.14);
+      margin: 0 0 55px;
+      @include breakpoint(1680) {
+        @include font-size(60px);
+      }
+      @include breakpoint(1440) {
+        @include font-size(50px);
+      }
+    }
+    .text {
+      max-width: 1440px;
+      margin: 0 auto;
+      a {
+        color: $black;
+      }
+      > *:first-child {
+        margin-top: 0;
+      }
+      > *:last-child {
+        margin-bottom: 0;
+      }
+      table, tr, td {
+        border: 1px solid $blue;
+        border-collapse:collapse;
+      }
+      table {
+        td {
+          padding: 10px;
+        }
+      }
+    }
+  }
+}

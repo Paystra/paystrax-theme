@@ -1,0 +1,27 @@
+// Base
+
+@import "base/normalize";
+@import "base/variables";
+@import "base/mixins";
+
+// Vendor
+
+@import "vendor/wow";
+@import "vendor/owl.carousel";
+
+// Partials
+
+@import "partials/multi";
+@import "partials/header";
+@import "partials/footer";
+@import "partials/blocks";
+
+// Main
+
+@import "main/page-home";
+@import "main/page-company";
+@import "main/page-solutions";
+@import "main/page-pricing";
+@import "main/page-contacts";
+@import "main/page-solutions-blocks";
+@import "main/page-default";

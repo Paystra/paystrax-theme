@@ -1,0 +1,114 @@
+.main.page-home {
+  .top-home-block {
+    height: 100vh;
+    .bg {
+      width: 100%;
+      height: 70vh;
+      -webkit-border-bottom-right-radius: 413px;
+      -webkit-border-bottom-left-radius: 413px;
+      -moz-border-radius-bottomright: 413px;
+      -moz-border-radius-bottomleft: 413px;
+      border-bottom-right-radius: 413px;
+      border-bottom-left-radius: 413px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      @include breakpoint(1024) {
+        -webkit-border-bottom-right-radius: 200px;
+        -webkit-border-bottom-left-radius: 200px;
+        -moz-border-radius-bottomright: 200px;
+        -moz-border-radius-bottomleft: 200px;
+        border-bottom-right-radius: 200px;
+        border-bottom-left-radius: 200px;
+      }
+      @include breakpoint(768) {
+        -webkit-border-bottom-right-radius: 100px;
+        -webkit-border-bottom-left-radius: 100px;
+        -moz-border-radius-bottomright: 100px;
+        -moz-border-radius-bottomleft: 100px;
+        border-bottom-right-radius: 100px;
+        border-bottom-left-radius: 100px;
+      }
+      @include breakpoint(480) {
+        height: calc(100vh - 75px);
+      }
+      .overlay {
+        background: linear-gradient(180deg, rgba(41, 49, 57, 0.9) 0%, rgba(41, 49, 57, 0.6) 100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .wrapper {
+      h1 {
+        padding-top: 20vh;
+        @include font(70px, #ffffff, 400, 1.14);
+        text-align: center;
+        margin: 0;
+        @include breakpoint(1440) {
+          @include font-size(64px);
+        }
+        @include breakpoint(1024) {
+          @include font-size(60px);
+        }
+        @include breakpoint(768) {
+          @include font-size(50px);
+        }
+        b {
+        }
+        br {
+        }
+      }
+      .icons {
+        top: calc(70vh - 198px);
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        z-index: 1;
+        @include breakpoint(1024) {
+          top: calc(70vh - 120px);
+        }
+        @include breakpoint(768) {
+          top: calc(70vh - 70px);
+        }
+        @include breakpoint(480) {
+          display: none;
+        }
+        img {
+          height: 288px;
+          width: auto;
+          display: block;
+          margin: 0 auto;
+          @include breakpoint(1024) {
+            height: 200px;
+          }
+          @include breakpoint(768) {
+            height: 150px;
+          }
+        }
+        span {
+          display: block;
+          text-align: center;
+          @include font(30px, $gold, 700, 1.14);
+          margin: 20px auto 0;
+        }
+      }
+    }
+  }
+  .photo-text-block {
+    &.home-2 {
+      .wrapper {
+        .content {
+          .links {
+            @include breakpoint(1440) {
+              grid-template-columns: 1fr 1fr;
+            }
+          }
+        }
+      }
+    }
+  }
+}

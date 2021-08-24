@@ -1,0 +1,7 @@
+{
+    "name": "vendor/demo",
+    "type": "twig",
+    "require": {
+        "twig/twig": "^2.0"
+    }
+}

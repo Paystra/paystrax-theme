@@ -1,0 +1,938 @@
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:400,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+.cap-demo {
+    height: 100vh;
+    width: 100% !important;
+}
+.cap-demo input:-webkit-autofill,
+.cap-demo input:-webkit-autofill:hover,
+.cap-demo input:-webkit-autofill:focus,
+.cap-demo textarea:-webkit-autofill,
+.cap-demo textarea:-webkit-autofill:hover,
+.cap-demo textarea:-webkit-autofill:focus,
+.cap-demo select:-webkit-autofill,
+.cap-demo select:-webkit-autofill:hover,
+.cap-demo select:-webkit-autofill:focus {
+    -webkit-text-fill-color: black;
+    box-shadow: none;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.cap-demo h1,
+.cap-demo h1,
+.cap-demo h2 {
+    font-family: "Roboto", serif;
+    font-weight: bold;
+}
+
+.cap-demo h1 {
+    border: none;
+    margin-top: 50px;
+}
+
+.cap-demo h2 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.cap-demo .infotext {
+    margin-top: 20px !important;
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+.cap-demo h3,
+.cap-demo p,
+.cap-demo .wpwl-label,
+.cap-demo iframe,
+.cap-demo h3,
+.cap-demo p,
+.cap-demo .wpwl-label,
+.cap-demo iframe {
+    font-family: "Roboto", sans-serif !important;
+}
+
+.cap-demo .wpwl-label {
+    width: 100%;
+    text-align: start;
+}
+
+.cap-demo iframe,
+.cap-demo .wpwl-control,
+.cap-demo iframe,
+.cap-demo .wpwl-control {
+    padding-left: 0 !important;
+}
+
+.cap-demo .wpwl-wrapper>.wpwl-icon,
+.cap-demo .wpwl-wrapper>.wpwl-icon {
+    position: absolute;
+    right: 0.5625em;
+    top: 5px;
+}
+
+.cap-demo .ui-state-default,
+.cap-demo .ui-state-default {
+    border: none;
+    background: none;
+}
+
+.cap-demo .wpwl-control {
+    width: 100%;
+}
+
+.cap-demo .wpwl-control::placeholder {
+    font-family: "M PLUS Rounded 1c", sans-serif !important;
+}
+
+.cap-demo .wpwl-group-card-logos-horizontal {
+    display: none;
+}
+
+.cap-demo .wpwl-container {
+    width: 450px;
+    padding: 25px;
+    background: #323e53;
+    background: -moz-linear-gradient(180deg, #323e53 0%, #181d29 100%);
+    background: -webkit-linear-gradient(180deg, #323e53 0%, #181d29 100%);
+    background: linear-gradient(180deg, #323e53 0%, #181d29 100%);
+    border-radius: 15px;
+    color: white;
+}
+
+.cap-demo .wpwl-container input,
+.cap-demo .wpwl-container .wpwl-control-iframe {
+    background: none;
+    border: none;
+}
+
+.cap-demo .wpwl-container .wpwl-wrapper {
+    width: 100%;
+}
+
+.cap-demo .wpwl-container .button-group {
+    width: 100%;
+    display: flex;
+    grid-area: Btn;
+    align-self: center;
+    padding-bottom: 20px;
+    justify-content: center;
+}
+
+.cap-demo .wpwl-container .button-group .payButton {
+    width: 140px;
+    height: 50px;
+    border: 2px solid #3a4558;
+    border-radius: 30px;
+    color: white;
+    transition: 0.2s;
+}
+
+.cap-demo .wpwl-container .button-group .payButton:hover {
+    border-color: white;
+    transition: 0.2s;
+}
+
+.cap-demo .wpwl-container .button-group .active {
+    border-color: white;
+}
+
+.cap-demo .wpwl-container .button-group .paypalButton {
+    display: none;
+}
+
+.cap-demo .wpwl-container .wpwl-group-cardNumber {
+    grid-area: Num;
+}
+
+.cap-demo .wpwl-container .wpwl-group-cardHolder {
+    grid-area: Name;
+}
+
+.cap-demo .wpwl-container .wpwl-group-expiry {
+    grid-area: Exp;
+}
+
+.cap-demo .wpwl-container .wpwl-group-cvv {
+    grid-area: CVV;
+}
+
+.cap-demo .wpwl-container .wpwl-group {
+    margin-bottom: unset;
+}
+
+.cap-demo .wpwl-group-registration.wpwl-selected {
+    border-radius: 6px;
+}
+
+.cap-demo .wpwl-container input,
+.cap-demo .wpwl-container .wpwl-control-iframe {
+    border-bottom: 1px solid #3a4558;
+}
+
+.cap-demo .wpwl-container h1 {
+    margin: 0;
+    height: 40px;
+    padding-bottom: 20px;
+    grid-area: Info;
+    color: white;
+}
+
+.cap-demo .wpwl-container .wpwl-popover {
+    color: black;
+    width: 115px;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-size: 13px;
+    text-align: center;
+}
+
+.cap-demo .wpwl-container .wpwl-popover .wpwl-arrow {
+    left: 82px !important;
+}
+
+.cap-demo .wpwl-container .wpwl-popover>.wpwl-popover-content {
+    margin: 0.5em 0;
+}
+
+.cap-demo .wpwl-container h3 {
+    grid-area: Method;
+    font-size: 16px;
+    margin: 0px;
+    margin-bottom: 5px;
+    align-self: end;
+    height: 20px;
+    color: white;
+}
+
+.cap-demo .wpwl-container .wpwl-group-brand {
+    display: none;
+}
+
+.cap-demo .wpwl-button-pay {
+    float: none;
+    background: white;
+    border: 2px solid black;
+    color: black;
+    width: 300px;
+    height: 45px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+.cap-demo .wpwl-button-pay:hover {
+    background: #A18A5A;
+    border: none;
+    color: white;
+}
+
+.cap-demo .wpwl-form-registrations .wpwl-wrapper-submit {
+    display: flex;
+    justify-content: center;
+}
+
+.cap-demo .wpwl-wrapper-registration-registrationId,
+.cap-demo .wpwl-wrapper-registration-brand,
+.cap-demo .wpwl-wrapper-registration-number,
+.cap-demo .wpwl-wrapper-registration-expiry {
+    padding-right: 15px;
+}
+
+.cap-demo .wpwl-wrapper-registration-brand {
+    margin-right: 20px;
+}
+
+.cap-demo .wpwl-wrapper-registration-details {
+    display: flex;
+    align-items: center;
+}
+
+.cap-demo .wpwl-registration {
+    display: flex;
+    align-items: center;
+}
+
+.cap-demo .wpwl-container-registration {
+    margin-bottom: 25px;
+}
+
+.cap-demo .wpwl-container-registration .wpwl-wrapper-submit {
+    margin-top: 20px;
+}
+
+.cap-demo .registerContainer {
+    display: flex;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    margin-bottom: 10px;
+}
+
+.cap-demo .registerContainer .customInput {
+    margin-left: 5px;
+}
+
+.cap-demo .registerContainer .customInput input {
+    width: 15px;
+    height: 15px;
+    margin-top: 6px;
+}
+
+.cap-demo .wpwl-group-submit {
+    border: none !important;
+    grid-area: sub;
+    justify-content: center;
+    align-content: end;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+.cap-demo .wpwl-control-expiry,
+.cap-demo .wpwl-control-cardHolder {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    color: white;
+}
+
+.cap-demo .wpwl-hint {
+    font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+.cap-demo .wpwl-form-card {
+    justify-content: center;
+    display: grid;
+    grid-template-areas: "Info Info Info" "Method Method Method" "Btn Btn Btn" "Name Name Name" "Num Num Num" "Exp . CVV" "sub sub sub";
+    grid-template-columns: 175px 25px 100px;
+    grid-template-rows: 60px 50px 90px 90px 90px 90px 105px;
+    margin: 0 auto;
+}
+
+.cap-demo .wpwl-container-virtualAccount-PAYPAL {
+    display: none !important;
+}
+
+.cap-demo .container-fluid {
+    text-align: center;
+}
+
+.cap-demo .container-fluid p {
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 30px;
+    color: black;
+    font-family: "Roboto", sans-serif;
+}
+
+.cap-demo .content {
+    width: calc(100% - 350px);
+    padding: 40px;
+    background: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.cap-demo .content.active {
+    width: 100%;
+}
+
+.cap-demo .items {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.cap-demo .items h1 {
+    border-bottom: 2px solid #f4f4f4;
+}
+
+.cap-demo .total {
+    font-family: "M PLUS Rounded 1c", sans-serif !important;
+}
+
+.cap-demo .locked-data {
+    font-family: "Roboto", sans-serif;
+    padding: 40px;
+    margin-top: 30px;
+    color: black;
+    background: #F9FAFA;
+    border-radius: 10px;
+    word-break: break-all;
+    font-weight: bold;
+}
+
+.cap-demo .locked-data h4 {
+    margin: 0px;
+    margin-bottom: 15px;
+    word-break: break-all;
+}
+
+.cap-demo .bottomPart button:hover {
+    background: #A18A5A;
+}
+
+.cap-demo .hide {
+    display: none !important;
+}
+
+.cap-demo .info-block h1 {
+    cursor: pointer;
+}
+
+.cap-demo .info {
+    display: grid;
+}
+
+.cap-demo .info-row {
+    display: flex;
+}
+
+.cap-demo .info-row .info {
+    display: unset;
+}
+
+.cap-demo .info-amount {
+    display: flex;
+}
+
+.cap-demo .amount {
+    display: grid;
+    width: 100%;
+}
+
+.cap-demo .amount:first-child {
+    margin-right: 4px;
+}
+
+#personal:hover,
+#contact:hover,
+#billing:hover {
+    color: #A18A5A !important;
+    cursor: pointer;
+}
+
+.cap-demo .clear:hover {
+    color: white;
+    background: #A18A5A;
+    border: none;
+}
+
+.cap-demo .info label {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+}
+
+.cap-demo .info label span {
+    font-size: 13px;
+    color: gray;
+}
+
+.cap-demo .info input,
+.cap-demo .info select {
+    border: 2px solid #989595;
+    padding: 10px;
+    border-radius: 4px;
+    background: #F9FAFA;
+    height: 45px;
+    margin-bottom: 20px;
+}
+
+.cap-demo .radio-btn-group {
+    display: flex;
+}
+
+.cap-demo .radio-btn-group label {
+    font-size: 14px;
+    line-height: 19px;
+}
+
+.cap-demo button[type="submit"],
+.cap-demo input[type="submit"] {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    width: 150px;
+    height: 45px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.cap-demo .clear {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 0;
+}
+
+.cap-demo .info input:focus,
+.cap-demo .info select:focus {
+    outline: none;
+    border: 2px solid #A18A5A !important;
+}
+
+.cap-demo button:hover {
+    cursor: pointer;
+    background: #A18A5A;
+    border: none;
+    color: white;
+}
+
+.cap-demo #lockIn {
+    cursor: pointer;
+    background: #A18A5A;
+    border: none;
+    color: white;
+}
+
+.cap-demo #lockIn:hover {
+    background: #cab179;
+}
+
+.cap-demo button:focus {
+    background: #A18A5A;
+    border: none;
+    outline: none;
+}
+
+
+/* Modal */
+
+.cap-demo .modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgb(0 0 0 / 78%);
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.cap-demo .cardReceipt {
+    background: white;
+    max-width: 700px;
+    margin: auto;
+    font-family: "Roboto", sans-serif !important;
+}
+
+.cap-demo .cardReceipt .top {
+    padding: 40px;
+    background: #333e49;
+    color: white;
+    position: relative;
+}
+
+.cap-demo .cardReceipt .icon {
+    position: absolute;
+    height: 25px;
+    top: 25px;
+    right: 25px;
+    filter: brightness(250%);
+}
+
+.cap-demo .cardReceipt .icon:hover {
+    cursor: pointer;
+    filter: sepia(100%) brightness(150%);
+}
+
+.cap-demo .cardReceipt .top h2 {
+    margin-bottom: 35px;
+    font-family: "Roboto", sans-serif;
+    color: white;
+}
+
+.cap-demo .top h2:hover {
+    color: unset !important;
+}
+
+.cap-demo .top .block h2:hover {
+    color: #A18A5A !important;
+    cursor: pointer;
+}
+
+.cap-demo .cardReceipt .top h3 {
+    font-size: 25px;
+    font-weight: bold;
+    padding-bottom: 40px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.13);
+    text-align: center;
+    margin: unset;
+    margin-bottom: 15px;
+}
+
+.cap-demo .cardReceipt .top h4 {
+    font-weight: normal;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.cap-demo .cardReceipt .top h4 span {
+    color: white;
+}
+
+.cap-demo .cardReceipt .top h5 {
+    margin: 0;
+    margin-bottom: 10px;
+    color: white;
+    text-align: center;
+}
+
+.cap-demo .cardReceipt .bottom {
+    background: #F9FAFA;
+}
+
+.cap-demo .cardReceipt .bottom .block {
+    border-radius: 10px;
+    width: 90%;
+    margin: auto;
+    position: relative;
+    padding: 20px;
+    background: white;
+    top: -30px;
+    margin-bottom: 30px;
+}
+
+.cap-demo .cardReceipt .bottom .block h5 {
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+}
+
+.cap-demo .cardReceipt .bottom .block h5:hover {
+    cursor: pointer;
+    color: #A18A5A;
+}
+
+.cap-demo .cardReceipt .bottom .block p {
+    color: #a1a1a1;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.cap-demo .cardReceipt .bottom .block p span {
+    color: #494949;
+}
+
+
+/* Modal end */
+
+.cap-demo .info1 {
+    width: 50%;
+    padding-right: 20px;
+    margin-bottom: 20px;
+}
+
+.cap-demo .checkout {
+    text-align: -webkit-center;
+}
+
+.cap-demo .arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    padding: 5px;
+    float: right;
+    margin-top: 10px;
+}
+
+.cap-demo .down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.cap-demo #personal:hover>.arrow,
+.cap-demo #contact:hover>.arrow,
+.cap-demo #billing:hover>.arrow {
+    border: solid #A18A5A;
+    border-width: 0 3px 3px 0;
+}
+
+.cap-demo #personal>.down.active,
+.cap-demo #contact>.down.active,
+.cap-demo #billing>.down.active {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    margin-top: 18px;
+}
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+.cap-demo .cap-demo  {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+
+.cap-demo p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+.cap-demo a,
+.cap-demo a:hover,
+.cap-demo a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.cap-demo .navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.cap-demo .navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.cap-demo .line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.cap-demo .wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.cap-demo #sidebar {
+    width: 350px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    background: #EAECEC;
+    color: #fff;
+    transition: all 0.5s cubic-bezier(0.945, 0.020, 0.270, 0.665);
+    transform-origin: bottom left;
+    text-align: center;
+}
+
+.cap-demo #sidebar.active {
+    margin-left: -350px;
+    transform: rotateY(100deg);
+}
+
+.cap-demo #sidebar .sidebar-header {
+    padding: 50px;
+    background: #EAECEC;
+}
+
+.cap-demo #sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+.cap-demo #sidebar ul li {
+    display: table;
+    width: 100%;
+}
+
+.cap-demo #sidebar ul li a {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    height: 80px;
+    vertical-align: middle;
+    display: table-cell;
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+}
+
+.cap-demo #sidebar ul li a:hover {
+    color: #A18A5A;
+    background: #fff;
+}
+
+.cap-demo #sidebar ul li.active>a,
+.cap-demo a[aria-expanded="true"] {
+    color: #fff;
+    background: #333e49;
+}
+
+.cap-demo a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.cap-demo .dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.cap-demo ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #6d7fcc;
+}
+
+.cap-demo ul.CTAs {
+    padding: 20px;
+}
+
+.cap-demo ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.cap-demo a.download {
+    background: #fff;
+    color: #7386D5;
+}
+
+.cap-demo a.article,
+.cap-demo a.article:hover {
+    background: #6d7fcc !important;
+    color: #fff !important;
+}
+
+.cap-demo #dismiss {
+    display: none;
+}
+
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+.cap-demo .content {
+    transition: all 0.4s;
+}
+
+.cap-demo #sidebarCollapse {
+    width: 40px;
+    height: 40px;
+    background: none;
+    cursor: pointer;
+}
+
+.cap-demo #sidebarCollapse span {
+    width: 80%;
+    height: 2px;
+    margin: 0 auto;
+    display: block;
+    background: #555;
+    transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+    transition-delay: 0.2s;
+}
+
+.cap-demo #sidebarCollapse span:first-of-type {
+    transform: rotate(45deg) translate(2px, 2px);
+}
+
+.cap-demo #sidebarCollapse span:nth-of-type(2) {
+    opacity: 0;
+}
+
+.cap-demo #sidebarCollapse span:last-of-type {
+    transform: rotate(-45deg) translate(1px, -1px);
+}
+
+.cap-demo #sidebarCollapse.active span {
+    transform: none;
+    opacity: 1;
+    margin: 5px auto;
+}
+
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .cap-demo #dismiss {
+        display: block !important;
+    }
+    .cap-demo .info-row {
+        display: block
+    }
+    .cap-demo .info1 {
+        width: auto;
+    }
+    .cap-demo .container-fluid p {
+        font-size: 25px;
+    }
+    .cap-demo .content {
+        width: 100%;
+    }
+    .cap-demo #sidebar {
+        margin-left: -350px;
+        transform: rotateY(90deg);
+    }
+    .cap-demo #sidebar.active {
+        margin-left: 0;
+        transform: none;
+    }
+    .cap-demo #sidebarCollapse span:first-of-type,
+    .cap-demo #sidebarCollapse span:nth-of-type(2),
+    .cap-demo #sidebarCollapse span:last-of-type {
+        transform: none;
+        opacity: 1;
+        margin: 5px auto;
+    }
+    .cap-demo #sidebarCollapse.active span {
+        margin: 0 auto;
+    }
+    .cap-demo #sidebarCollapse.active span:first-of-type {
+        transform: rotate(45deg) translate(2px, 2px);
+    }
+    .cap-demo #sidebarCollapse.active span:nth-of-type(2) {
+        opacity: 0;
+    }
+    .cap-demo #sidebarCollapse.active span:last-of-type {
+        transform: rotate(-45deg) translate(1px, -1px);
+    }
+    .cap-demo .overlay {
+        display: none;
+        position: fixed;
+        /* full screen */
+        width: 100vw;
+        height: 100vh;
+        /* transparent black */
+        background: rgba(0, 0, 0, 0.7);
+        /* middle layer, i.e. appears below the sidebar */
+        z-index: 998;
+        opacity: 0;
+        /* animate the transition */
+        transition: all 0.5s ease-in-out;
+    }
+    /* display .overlay when it has the .active class */
+    .cap-demo .overlay.active {
+        display: block;
+        opacity: 1;
+    }
+    .cap-demo #dismiss {
+        width: 35px;
+        height: 35px;
+        position: absolute;
+        /* top right corner of the sidebar */
+        top: 20px;
+        right: 10px;
+        color: #555;
+    }
+}

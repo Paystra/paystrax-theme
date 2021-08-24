@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript">
+        document.getElementsByClassName('internal')[0].style.display = 'none'; // temp
+    </script>
+    <title>COPYandPAY demo</title> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./assets/style/index.css">
+    <script type="text/javascript" src="./scripts/wpwl.js"></script>
+    <script src="https://test.paystra.net/v1/paymentWidgets.js?checkoutId={{ id }}"></script>
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+</head>
+
+
+<body>
+    <div class="wrapper cap-demo">
+        <div class="overlay"></div>
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div id="dismiss">
+                <i class="fas fa-times fa-lg"></i>
+            </div>
+            <div class="sidebar-header">
+                <a href="https://www.paystrax.com/"><img src="https://www.paystrax.com/wp-content/themes/paystra/assets/images/logo-blue.svg" alt="Paystrax company logo"></a>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="https://www.paystrax.com/golive-test/">Test Enviroment</a>
+                </li>
+                <li>
+                    <a href="https://www.paystrax.com/golive-prod/">Production Enviroment</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <p>COPYandPAY demo</p>
+
+                    
+                </div>
+            </nav>
+
+            <h1>Test Enviroment</h1>
+
+            <div class="row">
+                <div class="col items">
+                    <form action="" method="post">
+                        <div class="info-block">
+                            <h2>Channel setup</h2>
+                            <div class="info"> 
+                                <label for="entityId">Entity Id</label>
+                                <input type="text" name="entityId" required="required" value="{{entity}}">
+                                <label for="token">Token</label>
+                                <input type="text" name="gotToken" required="required" value="{{token}}">
+                                <div style="margin-top:5px">
+                                </div>
+                            </div>
+                            <h2 id="personal">Personal Information<i class="arrow down"></i></h2>
+                            <div class="info" id="personal-info">
+                                <label for="fname">First name</label>
+                                <input type="text" name="fname" value={% if inputParams.fname %} "{{inputParams.fname}}" {% else %}"Tom"{% endif %}>
+                                <label for="lname">Last name</label>
+                                <input type="text" name="lname" value={% if inputParams.fname %} "{{inputParams.lname}}" {% else %}"Tomson"{% endif %}>
+                                <label for="bdate">Birth date</label>
+                                <input type="date" name="bdate" value={% if inputParams.bdate %} "{{inputParams.bdate}}" {% else %}"2000-01-01"{% endif %}>
+                            </div>
+                            <h2 id="contact">Contact Information<i class="arrow down"></i></h2>
+                            <div class="info" id="contact-info">
+                                <label for="email">Email</label>
+                                <input type="text" name="email" value={% if inputParams.email %} "{{inputParams.email}}" {% else %}"accept@email.com"{% endif %}>
+                                <label for="phone">Phone number</label>
+                                <input type="text" name="phone" value={% if inputParams.phone %} "{{inputParams.phone}}" {% else %}"410023569"{% endif %}>
+                                <label for="mobile">Mobile number</label>
+                                <input type="text" name="mobile" value={% if inputParams.mobile %} "{{inputParams.mobile}}" {% else %}"865002123"{% endif %}>
+                            </div>
+                            <h2 id="billing">Billing address<i class="arrow down"></i></h2>
+                            <div class="info" id="billing-info">
+                                <label for="country">Country</label>
+                                <input type="text" name="country" required="required" value={% if inputParams.country %} "{{inputParams.country}}" {% else %}"LT"{% endif %} onkeyup="this.value = this.value.toUpperCase();" maxlength="2">
+                                <label for="city">City name</label>
+                                <input type="text" name="city" required="required" value={% if inputParams.city %} "{{inputParams.city}}" {% else %}"Vilnius"{% endif %}>
+                                <label for="street">Street name</label>
+                                <input type="text" name="street" required="required" value={% if inputParams.street1 %} "{{inputParams.street1}}" {% else %}"Vilniaus g. 1"{% endif %}>
+                                <label for="street2">Street name 2 <span>Optional</span></label>
+                                <input type="text" name="street2" value={% if inputParams.street2 %} "{{inputParams.street2}}" {% else %}""{% endif %}>
+                                <label for="postcode">Post code</label>
+                                <input type="text" name="postcode" value={% if inputParams.postcode %} "{{inputParams.postcode}}" {% else %}"80441"{% endif %}>
+                            </div>
+                            <div class="info info-amount">
+                                <div class="amount">
+                                    <label for="amount">Amount</label>
+                                    <input type="number" step="0.01" id="amount" name="amount" value={% if inputParams.amount %} "{{inputParams.amount}}" {% else %}"10.00"{% endif %}>
+                                </div>
+                                <div class="amount">
+                                    <label for="currency">Currency</label>
+                                    <select name="currency" id="currency">
+                                        <option value="EUR" {% if inputParams.currency == "EUR" %} selected="selected" {% endif %}>EUR</option>
+                                        <option value="USD" {% if inputParams.currency == "USD" %} selected="selected" {% endif %}>USD</option>
+                                        <option value="GBP" {% if inputParams.currency == "GBP" %} selected="selected" {% endif %}>GBP</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" name="lockin" value="yes" >
+                        <button type="submit" id="lockIn">Confirm</button>
+                    </form>
+                    <br>
+                    <form action="" method="post">
+                        <input type="hidden" name="clear" value="clear session">
+                        <button class="clear" type="submit">Clear Session</button>
+                    </form>
+                    </div>
+                    <div class="checkout col justify-content-end" style={% if capDisplay %} "display: block;"{% else %}"display: none;"{% endif %}>
+                        <form action="{{ afterPayment }}" class="paymentWidgets" data-brands="VISA APPLEPAY GOOGLEPAY">
+                        </form>
+                    </div>
+                </div>
+                <div class="locked-data">
+                    <div class="info-row">
+                        <div class="info1">
+                            <h2>Data developer/server side</h2>
+                            <h5>First name: {{inputParams.fname}}</h5>
+                            <h5>Last name: {{inputParams.lname}}</h5>
+                            <h5>Birth date: {{inputParams.bdate}}</h5>
+                            <h5>Email: {{inputParams.email}}</h5>
+                            <h5>Mobile number: {{inputParams.mobile}}</h5>
+                            <h5>Phone number: {{inputParams.phone}}</h5>
+                            <h5>Country: {{inputParams.country}}</h5>
+                            <h5>City: {{inputParams.city}}</h5>
+                            <h5>Street: {{inputParams.street}}</h5>
+                            {% if inputParams.street2 %}
+                            <h5>Street 2: {{inputParams.street2}}</h5>
+                            {% endif %}
+                            <h5>Total: {{inputParams.amount}}</h5>
+                            <h5>Currency: {{inputParams.currency}}</h5>
+                            <h5>Merchant TransactionId: {{ inputParams.merchantTransactionId }}</h5>
+                            <h5>PaymentType: {{ inputParams.paymentType }}</h5>
+                        </div>
+                        <div class="info1">
+                            <h2>CopyandPay side</h2>
+                            {# <h3>Secure payment</h3> #}
+                            <h5>Request URI: {{ request_uri }}</h5>
+                            <h5>Checkout id: {{ id }}{{checkoutId}}</h5>
+                        </div>
+                    </div>
+                    <h2>(test).paystra.net side</h2>
+                    <div class="info-row">
+                        
+                        <div class="info1 column">
+                            {# {{outputParams.outputData}} #}
+                            <h5>
+                            Id: {{outputParams.id}}
+                            </h5><h5>
+                            Registration id: {{outputParams.registrationId}}
+                            </h5><h5>
+                            Payment type: {{outputParams.paymentType}}
+                            </h5><h5>
+                            Payment brand: {{outputParams.paymentBrand}}
+                            </h5><h5>
+                            Amount: {{outputParams.amount}}
+                            </h5><h5>
+                            Currency: {{outputParams.currency}}
+                            </h5><h5>
+                            Descriptor: {{outputParams.descriptor}}
+                            </h5><h5>
+                            Merchant transaction ID:{{outputParams.merchantTransactionId}}
+                            </h5><h5>
+                            Code: {{outputParams.code}}
+                            </h5><h5>
+                            Description: {{outputParams.description}}
+                            </h5><h5>
+                            Extended description: {{outputParams.ExtendedDescription}}
+                            </h5><h5>
+                            Aquirer response: {{outputParams.AcquirerResponse}}
+                            </h5><h5>
+                            Recocilation ID:{{outputParams.reconciliationId}}
+                            </h5><h5>
+                            Conector TxID1: {{outputParams.ConnectorTxID1}}
+                            </h5><h5>
+                            Conector TxID3: {{outputParams.ConnectorTxID3}}
+                            </h5><h5>
+                            BIN: {{outputParams.bin}}
+                            </h5><h5>
+                            Last 4 digits of a card: ****{{outputParams.last4Digits}}
+                            </h5><h5>
+                            Holder: {{outputParams.holder}}
+                            </h5>
+                            </div>
+                            <div class="info1 column">
+                            <h5>
+                            Expiry date: {{outputParams.expiryMonth}}/{{outputParams.expiryYear}}
+                            </h5><h5>
+                            Phone: {{outputParams.phone}}
+                            </h5><h5>
+                            Mobile: {{outputParams.mobile}}
+                            </h5><h5>
+                            E-mail: {{outputParams.email}}
+                            </h5>
+                            <h5>
+                            IP: {{outputParams.ip}}
+                            </h5><h5>
+                            Street 1:{{outputParams.street1}}
+                            </h5><h5>
+                            Street 2:{{outputParams.street2}}
+                            </h5><h5>
+                            City: {{outputParams.city}}
+                            </h5><h5>
+                            Post code: {{outputParams.postcode}}
+                            </h5><h5>
+                            Country: {{outputParams.country}}
+                            </h5><h5>
+                            ECI: {{outputParams.eci}}
+                            </h5><h5>
+                            CTPE descriptor template: {{outputParams.ctpeDescriptorTemplate}}
+                            </h5><h5>
+                            Risk score: {{outputParams.score}}
+                            </h5><h5>
+                            Build number: {{outputParams.buildNumber}}
+                            </h5><h5>
+                            Date: {{outputParams.date}}
+                            </h5><h5>
+                            Time: {{outputParams.time}}
+                            </h5><h5>
+                            NDC: {{outputParams.ndc}}
+                            </h5>
+                        </div>
+                    </div>
+                </div>  
+            <div class="modal" style={% if modalDisplay %} "display: block;"{% else %}"display: none;"{% endif %}>
+                <div class="cardReceipt">
+                    <div class="top">
+                        <img class="icon closeReceipt" src="assets/images/close.png" alt="close icon">
+                        <h2>Invoice Summary</h2>
+                        <h5>Invoice total</h5>
+                        <h3>{{outputParams.amount}} EUR</h3>
+                        <h4>Date <span>{{outputParams.date}}</span></h4>
+                        <div id="response" class="block">
+                            <h2 style="text-align: center;">{{ outputParams.description }}</h2>
+                            <p style="text-align: center;">{{outputParams.code}}</p>
+                            <p style="text-align: center;">{{outputParams.ExtendedDescription}}</p>
+                        </div>
+                    </div>
+                    <div class="bottom">
+                        <div class="block">
+                            <h5 style="text-align: center;">customer profile</h5>
+                            {% if outputParams.name and outputParams.surname %}
+                                <p>Name<span>{{outputParams.name}} {{outputParams.surname}}
+                            {% endif %}
+                            {% if not outputParams.name %}
+                                {{outputParams.holder}}</span></p>
+                            {% endif %}
+                            {% if outputParams.mobile %}
+                                <p>Phone<span>{{outputParams.mobile}}</span></p>
+                            {% endif %}
+                            {% if outputParams.email %}
+                                <p>Email<span>{{outputParams.email}}</span></p>
+                            {% endif %}
+                        </div>
+                        <div class="block">
+                            <h5 style="text-align: center;">billing address</h5>
+                            {% if outputParams.country %}
+                                <p>Country <span>{{outputParams.country}}</span></p>
+                            {% endif %}
+                            {% if outputParams.city %}
+                                <p>City<span>{{outputParams.city}}</span></p>
+                            {% endif %}
+                            {% if outputParams.street1 %}
+                                <p>Address<span>{{outputParams.street1}}</span></p>
+                            {% endif %}
+                            {% if outputParams.street2 %}
+                                <p>Address 2<span>{{outputParams.street2}}</span></p>
+                            {% endif %}
+                        </div>
+                        <div class="block">
+                            <h5 style="text-align: center;">card information</h5>
+                            {% if outputParams.holder %}
+                                <p>Holder<span>{{outputParams.holder}}</span></p>
+                            {% endif %}
+                            {% if outputParams.last4Digits %}
+                                <p>Card number <span>**** **** **** {{outputParams.last4Digits}}</span></p>
+                            {% endif %}
+                            {% if outputParams.expiryMonth and outputParams.expiryYear %}
+                                <p>Expiry <span>{{outputParams.expiryMonth}} / {{outputParams.expiryYear}}</span></p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <script type="text/javascript" src="./scripts/wpwl.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+             $('#dismiss, .overlay').on('click', function () {
+            // hide sidebar
+                $('#sidebar').removeClass('active');
+                // hide overlay
+                $('.overlay').removeClass('active');
+                $('#sidebarCollapse, .content').removeClass('active');
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, .content, .overlay').toggleClass('active');
+                $(this).toggleClass('active');
+                // fade in the overlay
+            });
+
+            $('#personal').on('click', function () {
+                $('#personal > .down').toggleClass('active');
+            });
+            $('#contact').on('click', function () {
+                $('#contact > .down').toggleClass('active');
+            });
+            $('#billing').on('click', function () {
+                $('#billing > .down').toggleClass('active');
+            });
+
+            $("#billing-info").hide();
+            $("#contact-info").hide();
+            $("#personal-info").hide();
+            $('#billing').click(function() {
+                $("#billing-info").toggle("slow");
+            });
+            $('#contact').click(function() {
+                $("#contact-info").toggle("slow");
+            });
+            $('#personal').click(function() {
+                $("#personal-info").toggle("slow");
+            });
+            $(".block").click(function() {
+                $("p", this).toggle("slow");
+            });
+            $(".closeReceipt").click(function() {
+                $(".modal").attr("style", "display:none");
+            });
+        });
+
+        document.getElementsByTagName('footer')[0].style.display = 'none'; //temp
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,273 @@
+// Main universal elements
+
+* {
+  @include box-sizing(border-box);
+}
+
+html {
+  font-size: 100%;
+  @include breakpoint(1440) {
+    font-size: 90%;
+  }
+  @include breakpoint(1024) {
+    font-size: 80%;
+  }
+  @include breakpoint(768) {
+    font-size: 75%;
+  }
+  @include breakpoint(480) {
+    font-size: 70%;
+  }
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  line-height: 1;
+  font-family: $font;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  width: calc(100% - 240px);
+  margin: 0 auto;
+  max-width: 1920px;
+  position: relative;
+  @include breakpoint(1440) {
+    width: calc(100% - 120px);
+  }
+  @include breakpoint(768) {
+    width: calc(100% - 60px);
+  }
+}
+
+// Mix
+
+.all {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.vc {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+}
+
+*:focus {
+  outline: none;
+}
+
+// Theme
+
+h1 {
+  @include font(70px, $black, 400, 1.14);
+  margin: 0 0 55px;
+  @include breakpoint(1680) {
+    @include font-size(60px);
+  }
+}
+
+h2 {
+  @include font(70px, $black, 400, 1.14);
+  margin: 0 0 55px;
+  @include breakpoint(1680) {
+    @include font-size(60px);
+  }
+  @include breakpoint(1440) {
+    @include font-size(50px);
+  }
+}
+
+h3 {
+  @include font(50px, $black, 400, 1.14);
+  @include breakpoint(1680) {
+    @include font-size(40px);
+  }
+  @include breakpoint(1440) {
+    @include font-size(36px);
+  }
+}
+
+h4 {
+  @include font(30px, $black, 400, 1.14);
+}
+
+h5 {
+  @include font(24px, $black, 400, 1.14);
+}
+
+h6 {
+  @include font(20px, $black, 400, 1.14);
+}
+
+p,
+.text ul {
+  @include font(20px, $black, 400, 1.4);
+}
+
+.black {
+  background: $black;
+}
+
+.overlay {
+  &.black {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $black;
+  }
+}
+
+.opc-5 {
+  @include opacity(5%);
+}
+
+.opc-7 {
+  @include opacity(7%);
+}
+
+.opc-10 {
+  @include opacity(10%);
+}
+
+.opc-30 {
+  @include opacity(30%);
+}
+
+.opc-40 {
+  @include opacity(40%);
+}
+
+.opc-70 {
+  @include opacity(70%);
+}
+
+b, strong {
+  font-weight: 700;
+}
+
+.circle {
+  @include border-radius(100%);
+}
+
+.text {
+  p:first-of-type {
+    margin-top: 0;
+  }
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+  &.col-2 {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 7.5%;
+    -moz-column-gap: 7.5%;
+    column-gap: 7.5%;
+    @include breakpoint(1024) {
+      -webkit-column-count: 1;
+      -moz-column-count: 1;
+      column-count: 1;
+    }
+  }
+  &.short {
+    p {
+      max-width: 712px;
+    }
+  }
+}
+
+.grid {
+  display: grid;
+  &.col-2 {
+    grid-template-columns: 1fr 1fr;
+    @include breakpoint(1024) {
+      grid-template-columns: 1fr;
+    }
+  }
+  &.col-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+    @include breakpoint(1024) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include breakpoint(768) {
+      grid-template-columns: 1fr;
+    }
+  }
+  &.col-4 {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    @include breakpoint(1024) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    @include breakpoint(768) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include breakpoint(480) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.center-btn {
+  text-align: center;
+}
+
+.btn {
+  text-decoration: none;
+  display: inline-block;
+  @include font(24px, $black, 700, 1);
+  &.round {
+    padding: 14px 34px;
+    border: 3px solid $gold;
+    @include border-radius(112px);
+  }
+  &.border {
+    padding: 0 32px 14px 32px;
+    border-bottom: 5px solid $gold;
+    text-transform: uppercase;
+  }
+}
+
+.align-right {
+  text-align: right;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.img {
+  .circle {
+    @include breakpoint(768) {
+      max-width: 360px !important;
+      margin: 0 auto !important;
+    }
+  }
+}
+
+// Small fix (temp)
+
+.black-opc-40 {
+  background: rgba(51, 62, 73, 0.4) !important;
+  opacity: 1 !important;
+  filter: inherit;
+}
+
+.black-opc-70 {
+  background: rgba(51, 62, 73, 0.7) !important;
+  opacity: 1 !important;
+  filter: inherit;
+}

@@ -1,0 +1,374 @@
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  @include transition($tr-all);
+  -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.0);
+  -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.0);
+  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.0);
+  &.home {
+    .wrapper {
+      .menu {
+        .navigation {
+          li {
+            a {
+              color: #ffffff;
+            }
+          }
+        }
+      }
+      .mobile-btn {
+        span {
+          background: #ffffff;
+        }
+      }
+    }
+  }
+  &.scrolled {
+    background: #ffffff;
+    -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+    .wrapper {
+      padding: 32px 0;
+      @include breakpoint(1024) {
+        padding: 16px 0;
+      }
+      .logo {
+        img {
+          &.default {
+            @include opacity(0);
+          }
+          &.scrolled {
+            @include opacity(1);
+          }
+        }
+      }
+      .menu {
+        .navigation {
+          li {
+            a {
+              color: $black;
+            }
+          }
+        }
+      }
+      .mobile-btn {
+        span {
+          background: $black;
+        }
+      }
+    }
+  }
+  .wrapper {
+    padding: 64px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include transition($tr-all);
+    @include breakpoint(1024) {
+      padding: 32px 0;
+    }
+    .logo {
+      text-decoration: none;
+      display: inline-block;
+      width: 202px;
+      height: 48px;
+      position: relative;
+      @include breakpoint(1024) {
+        width: 143px;
+        height: 34px;
+      }
+      img {
+        height: 48px;
+        width: auto;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include transition($tr-opc);
+        @include breakpoint(1024) {
+          height: 34px;
+        }
+        &.default {
+          @include opacity(1);
+        }
+        &.scrolled {
+          @include opacity(0);
+        }
+      }
+    }
+    .menu {
+      display: flex;
+      align-items: center;
+      .navigation {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        @include breakpoint(768) {
+          display: none;
+        }
+        li {
+          margin: 0 45px 0 0;
+          &:last-of-type {
+            margin: 0;
+          }
+          &.login {
+            a {
+              vertical-align: middle;
+              &:before {
+                content: "";
+                display: inline-block;
+                width: 23px;
+                height: 23px;
+                background-image: url('../images/icon-login.svg');
+                background-repeat: no-repeat;
+                background-size: 100%;
+                background-position: center;
+                margin: 0 12px 0 0;
+                vertical-align: middle;
+              }
+            }
+          }
+          a {
+            text-decoration: none;
+            @include font(20px, $black, 700, 1);
+            @include transition($tr-clr);
+            &:hover {
+              color: $gold;
+            }
+          }
+          &.menu-item-has-children {
+            &:hover {
+              .sub-menu {
+                @include opacity(1);
+                z-index: 50;
+                pointer-events: inherit;
+                margin-top: 20px;
+              }
+            }
+            .sub-menu {
+              position: absolute;
+              padding: 30px 30px !important;
+              text-align: left !important;
+              margin-left: -30px !important;
+              display: block;
+              list-style-type: none;
+              background: #F0F7FF;
+              @include border-radius(50px);
+              -webkit-box-shadow: 0px 30px 40px 0px rgba(0,0,0,0.16);
+              -moz-box-shadow: 0px 30px 40px 0px rgba(0,0,0,0.16);
+              box-shadow: 0px 30px 40px 0px rgba(0,0,0,0.16);
+              @include opacity(0);
+              z-index: -1;
+              pointer-events: none;
+              @include transition($tr-all);
+              margin-top: 0;
+              &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 68px;
+                width: 0;
+                height: 0;
+                border: 20px solid transparent;
+                border-bottom-color: #F0F7FF;
+                border-top: 0;
+                margin-left: -20px;
+                margin-top: -20px;
+              }
+              li {
+                margin: 0 0 15px;
+                &:last-of-type {
+                  margin: 0;
+                }
+                a {
+                  @include font(20px, $black, 700, 1);
+                  text-decoration: none;
+                  white-space: nowrap;
+                  @include transition($tr-clr);
+                  &:hover {
+                    color: $gold;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .side-menu-btn {
+        text-decoration: none;
+        display: inline-block;
+        img {
+          height: 16px;
+          width: auto;
+          display: block;
+        }
+      }
+    }
+    .mobile-btn {
+      display: none;
+      @include breakpoint(768) {
+        display: block;
+        cursor: pointer;
+        span {
+          height: 2px;
+          width: 24px;
+          background: $gold;
+          margin: 0 0 4px;
+          display: block;
+          &:last-of-type {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mobile-menu {
+  height: 100vh;
+  width: 100vw;
+  right: -100vw;
+  background: #ffffff;
+  top: 0;
+  @include transition($tr-all);
+  position: fixed;
+  z-index: 5;
+  &.active {
+    right: 0;
+  }
+  .wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .wrap {
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        li {
+          margin: 0 0 20px;
+          text-align: center;
+          &:last-of-type {
+            margin: 0;
+          }
+          ul {
+            margin: 20px 0 0;
+            li {
+              a {
+                @include font-size(20px);
+                font-weight: 400;
+              }
+            }
+          }
+          a {
+            text-decoration: none;
+            @include font(22px, $black, 700, 1);
+            @include transition($tr-clr);
+            &:hover {
+              color: $gold;
+            }
+          }
+        }
+      }
+    }
+  }
+  .mobile-close {
+    position: absolute;
+    right: 28px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    z-index: 5;
+    cursor: pointer;
+    &:before,
+    &:after {
+      position: absolute;
+      left: 15px;
+      content: ' ';
+      height: 33px;
+      width: 2px;
+      background-color: $gold;
+    }
+    &:before {
+      transform: rotate(-45deg);
+    }
+    &:after {
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.hover-menu {
+  @include border-radius(50px);
+  overflow: hidden;
+  display: flex;
+  top: 80px;
+  position: absolute;
+  right: 120px;
+  @include transition($tr-all);
+  @include opacity(0);
+  z-index: -1;
+  pointer-events: none;
+  &.active {
+    top: 110px;
+    @include opacity(1);
+    z-index: 5;
+    pointer-events: inherit;
+    &:before {
+      display: block;
+      content: "";
+      position: absolute;
+      top: -10px;
+      width: 100%;
+      background: transparent;
+      height: 30px;
+    }
+  }
+  .left {
+    background: #F0F7FF;
+    width: 66.33%;
+    padding: 26px 26px 0 26px;
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      li {
+        width: 50%;
+        min-width: 200px;
+        margin: 0 0 30px;
+        a {
+          @include font(20px, $black, 700, 1);
+          text-decoration: none;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+  .right {
+    background: #42505A;
+    width: 33.33%;
+    padding: 26px;
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      li {
+        min-width: 200px;
+        margin: 0 0 30px;
+        a {
+          @include font(20px, #ffffff, 700, 1);
+          text-decoration: none;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
