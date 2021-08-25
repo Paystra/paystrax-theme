@@ -124,7 +124,7 @@
                     </form>
                     </div>
                     <div class="checkout col justify-content-end" style={% if capDisplay %} "display: block;"{% else %}"display: none;"{% endif %}>
-                        <form action="{{ afterPayment }}" class="paymentWidgets" data-brands="VISA APPLEPAY GOOGLEPAY">
+                        <form action="{{ afterPayment }}" class="paymentWidgets" data-brands="VISA MASTER">
                         </form>
                     </div>
                 </div>
@@ -150,8 +150,7 @@
                             <h5>PaymentType: {{ inputParams.paymentType }}</h5>
                         </div>
                         <div class="info1">
-                            <h2>CopyandPay side</h2>
-                            {# <h3>Secure payment</h3> #}
+                            <h2>Copy and Pay side</h2>
                             <h5>Request URI: {{ request_uri }}</h5>
                             <h5>Checkout id: {{ id }}{{checkoutId}}</h5>
                         </div>
@@ -245,7 +244,7 @@
                         <img class="icon closeReceipt" src="assets/images/close.png" alt="close icon">
                         <h2>Invoice Summary</h2>
                         <h5>Invoice total</h5>
-                        <h3>{{outputParams.amount}} EUR</h3>
+                        <h3>{{outputParams.amount}} {{outputParams.currency}}</h3>
                         <h4>Date <span>{{outputParams.date}}</span></h4>
                         <div id="response" class="block">
                             <h2 style="text-align: center;">{{ outputParams.description }}</h2>
@@ -355,7 +354,6 @@
                 $(".modal").attr("style", "display:none");
             });
         });
-
         document.getElementsByTagName('footer')[0].style.display = 'none'; //temp
     </script>
 </body>

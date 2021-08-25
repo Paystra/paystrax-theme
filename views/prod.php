@@ -58,7 +58,7 @@ dataInput:{
                 "&merchantTransactionId=" . $param['inputParams']['merchantTransactionId'] .
 				"&shopperResultUrl=" . "https://www.paystrax.com/golive-prod/" . //?url=paystra.net/v1/" .
 				"&transactionCategory=MO".
-				"&recurringType=INITIAL" .
+				"&recurringType=INITIAL";
 				//"&descriptor=" . "PAYSTRAXUAB" .
                 //"&registrations[0].id=8ac7a49f6f473aab016f562cb960701d" .
                 //"&customer.ip=" . $param['inputParams']['ip'] .
@@ -73,8 +73,6 @@ dataInput:{
                 //"&customer.birthDate=" . $param['inputParams']['bdate'] .
                 //"&customer.givenName=". $param['inputParams']['fname'] .
                 //"&customer.surname=". $param['inputParams']['lname'] . 
-				$mode
-                ;
                 // "&createRegistration=true" .
                 // "&recurringType=INITIAL";
 				$param['debug_request'] = $inputParam;

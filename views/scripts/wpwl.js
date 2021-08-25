@@ -2,9 +2,15 @@ function revert() {
     $(".wpwl-button-brand").click();
 }
 var wpwlOptions = {
+    registrations: {
+        requireCvv: false,
+        hideInitialPaymentForms: true
+    },
     style: "logos",
     showCVVHint: true,
     maskCvv: true,
+    locale: "en",
+    imageStyle: "svg",
     sofortCountries: {
         DE: "Deutschland",
         NL: "Nederland",

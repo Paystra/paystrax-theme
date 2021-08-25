@@ -38,7 +38,6 @@ dataInput:{
         $_SESSION['amount'] = isset($_POST["amount"]) ? $_POST['amount'] : false;
         $_SESSION['currency'] = isset($_POST["currency"]) ? $_POST['currency'] : false;
 
-        // $param = [];
         $param['entity'] = $_SESSION['entityId'];
         $param['token'] = $_SESSION['gotToken'];
         $param['inputParams']['entityId'] = $_SESSION['entityId'];
@@ -102,7 +101,6 @@ dataInput:{
     }
 }
 
-
 dataOutput:{
     $checkoutId = isset($_GET['id']) ? $_GET['id'] : false;
     $uri = "checkouts/".$checkoutId ."/payment?entityId=" .$_SESSION['entityId'];
@@ -116,7 +114,6 @@ dataOutput:{
     if (!empty($text4)){
         $param['outputParams']['outputDataFixed'] = str_replace("/\s+/", "\n", $text4);
     }
-    // $checkoutId = $outputArray['ndc'];
     if (!empty($outputArray['id'])){
         $param['outputParams']['id'] = $outputArray['id'];
     }
