@@ -1,0 +1,38 @@
+name: Prepare Composer application pins
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+concurrency:
+  group: composer-pins
+  cancel-in-progress: false
+jobs:
+  fix:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - name: Create fix branch
+        run: git switch -c "automation/composer-pins-${GITHUB_RUN_ID}"
+      - uses: Paystra/supply-chain-linter@ae6b00798fa8cff1d0bffa1de5603c8c4771b532
+        with:
+          ecosystem: composer
+          command: fix
+          report-only: 'true'
+          auto-commit: 'true'
+      - name: Open pull request for native verification and manual merge
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: |
+          branch="automation/composer-pins-${GITHUB_RUN_ID}"
+          if ! git ls-remote --exit-code --heads origin "$branch" >/dev/null; then
+            echo 'No committed Composer fix branch. Review the linter output for existing pins or unresolved findings.' >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          gh pr create --base "$DEFAULT_BRANCH" --head "$branch" \
+            --title 'Pin Composer application dependencies to existing lock selections' \
+            --body 'ITOP-417: pins explicitly configured application requirements to existing compatible lock selections, preserving all package records and references. Native validation/install and safe application checks are required before manual merge. This does not upgrade dependencies or remediate existing audit findings. No automatic approval or merge.'
