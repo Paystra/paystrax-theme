@@ -1,0 +1,7 @@
+{
+  "composer": {
+    "applicationRoots": [
+      "views"
+    ]
+  }
+}
