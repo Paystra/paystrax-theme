@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: Paystra/supply-chain-linter
-          ref: ae6b00798fa8cff1d0bffa1de5603c8c4771b532
+          ref: fb30eb342ad7b00476bd956ccdb777280eb08d0d
           ssh-key: ${{ secrets.SUPPLY_CHAIN_LINTER_DEPLOY_KEY }}
           persist-credentials: false
           path: private-linter
