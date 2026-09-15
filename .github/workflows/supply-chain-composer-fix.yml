@@ -15,15 +15,27 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ github.event.repository.default_branch }}
+          path: target
       - name: Create fix branch
+        working-directory: target
         run: git switch -c "automation/composer-pins-${GITHUB_RUN_ID}"
-      - uses: Paystra/supply-chain-linter@ae6b00798fa8cff1d0bffa1de5603c8c4771b532
+      - name: Checkout private supply-chain linter
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
+          repository: Paystra/supply-chain-linter
+          ref: fb30eb342ad7b00476bd956ccdb777280eb08d0d
+          ssh-key: ${{ secrets.SUPPLY_CHAIN_LINTER_DEPLOY_KEY }}
+          persist-credentials: false
+          path: private-linter
+      - uses: ./private-linter
+        with:
+          working-directory: target
           ecosystem: composer
           command: fix
           report-only: 'true'
           auto-commit: 'true'
       - name: Open pull request for native verification and manual merge
+        working-directory: target
         env:
           GH_TOKEN: ${{ github.token }}
           DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
